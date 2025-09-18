@@ -5,7 +5,7 @@ import { styles } from '../../styles/style';
 const Footer = () => {
     return (
         <div style={{ ...styles.footer, color: 'white' }}>
-            <div style={styles.sectionContent}>
+            <div style={styles.sectionContent} sx={styles.sectionContent}>
                 <div style={styles.footerContent}>
                     <div style={styles.footerText}>
                         © 2021 All Rights Reserved

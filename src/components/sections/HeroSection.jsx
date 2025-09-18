@@ -1,5 +1,5 @@
 import CountdownTimer from '../UI/CountdownTimer';
-import { styles } from '../../styles/style';
+import { SectionContent, styles } from '../../styles/style';
 import { Box, Button, Typography } from '@mui/material';
 import img from '../../assets/Speech.jpg';
 import Header from '../layout/header';
@@ -7,15 +7,21 @@ import Header from '../layout/header';
 const HeroSection = () => {
     return (
         <>
-            <div style={{
-                ...styles.heroSection,
-                backgroundImage: `url(${img})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-            }} className='hero-section'>
+            <Box
+                style={{
+                    ...styles.heroSection,
+                    backgroundImage: `url(${img})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                }}
+                sx={{
+                    height: { xs: '300px', sm: '400px', md: '500px', lg: '600px' },
+                }}
+                className='hero-section'
+            >
                 <Header />
-                <div style={styles.heroContent}>
+                <SectionContent style={styles.heroContent}>
                     <div>
                         <span style={styles.chip}>June 12, 2025</span>
                         <span style={styles.chip}>Mumbai, India</span>
@@ -30,15 +36,15 @@ const HeroSection = () => {
                     </Typography>
 
                     <Box display="flex" flexDirection="column" alignItems="center">
-                        <button style={{ ...styles.btnPrimary, fontSize: '1.1rem', padding: '16px 32px', marginBottom: '48px' }}>
+                        <Button style={{ ...styles.btnPrimary, textTransform: 'none', fontSize: '1.1rem', padding: '16px 32px', marginBottom: '48px' }}>
                             Register Now
-                        </button>
-                        <Button variant="outlined" sx={{ borderColor: 'white', color: 'white', }}>Contact Us</Button>
+                        </Button>
+                        <Button variant="outlined" sx={{ borderColor: 'white', color: 'white', textTransform: 'none', }}>Contact Us</Button>
                     </Box>
 
                     <CountdownTimer />
-                </div>
-            </div>
+                </SectionContent>
+            </Box>
         </>
     );
 };

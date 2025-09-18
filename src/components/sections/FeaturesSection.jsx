@@ -1,48 +1,106 @@
-// components/sections/FeaturesSection.js
-import React from 'react';
-import FeatureCard from '../UI/FeatureCard';
-import { styles } from '../../styles/style';
+import { Box, Typography } from "@mui/material";
+
+import CompasIcon from "../../assets/compassIcon.svg?react";
+import AIChip from "../../assets/AIused.svg?react";
+import GearIcon from "../../assets/gearIcon.svg?react";
+
+const features = [
+    {
+        icon: <CompasIcon style={{ width: 120, height: 120, fill: "#4A90E2" }} />,
+        title: "Discover RISE with SAP",
+        description:
+            "Discover how Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.",
+    },
+    {
+        icon: <AIChip style={{ width: 120, height: 120, fill: "#4A90E2" }} />,
+        title: "AI use-cases",
+        description:
+            "Discover how Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.",
+    },
+    {
+        icon: <GearIcon style={{ width: 120, height: 120, fill: "#4A90E2" }} />,
+        title: "SAP Transformation",
+        description:
+            "Discover how Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.",
+    },
+];
 
 const FeaturesSection = () => {
-    const features = [
-        {
-            icon: '🌐',
-            title: 'Discover How APIs Rule',
-            description: 'Lorem ipsum dolor sit amet...'
-        },
-        {
-            icon: '🤖',
-            title: 'AI-first Vision',
-            description: 'Lorem ipsum dolor sit amet...'
-        },
-        {
-            icon: '⚙️',
-            title: 'SAP S/4 Optimization',
-            description: 'Lorem ipsum dolor sit amet...'
-        }
-    ];
-
     return (
-        <>
-            <div style={{ ...styles.section, backgroundColor: '#000', color: 'white' }}>
-                <div style={styles.sectionContent}>
-                    <h2 style={styles.sectionTitle}>
-                        What you will <span style={styles.highlight}>learn</span>
-                    </h2>
+        <Box
+            sx={{
+                backgroundColor: "#121212",
+                color: "white",
+                py: { xs: 6, md: 10 },
+                textAlign: "center",
+                mx: 'auto',
+                px: '100px',
+            }}
+        >
+            <Typography
+                variant="h3"
+                component="h2"
+                sx={{ fontWeight: "700", mb: 2 }}
+            >
+                What you will{" "}
+                <Box component="span" sx={{ color: "#FF8E53" }}>
+                    learn
+                </Box>
+            </Typography>
 
-                    <p style={styles.sectionSubtitle}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
+            <Typography
+                variant="body1"
+                sx={{
+                    opacity: 0.8,
+                    maxWidth: "700px",
+                    mx: "auto",
+                    mb: { xs: 6, md: 8 },
+                }}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </Typography>
 
-                    <div className="features-grid">
-                        {features.map((feature, index) => (
-                            <FeatureCard key={index} {...feature} />
-                        ))}
-                    </div>
-
-                </div>
-            </div>
-        </>
+            <Box
+                sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "center",
+                    gap: 4,
+                    mt: 4,
+                }}
+            >
+                {features.map((feature, index) => (
+                    <Box
+                        key={index}
+                        sx={{
+                            flex: {
+                                xs: "1 1 100%",
+                                sm: "1 1 45%",
+                                md: "1 1 30%",
+                            },
+                            maxWidth: { xs: "100%", sm: "45%", md: "30%" },
+                            textAlign: "center",
+                            px: { xs: 0, md: 2 },
+                            textAlign: 'left',
+                        }}
+                    >
+                        {feature.icon}
+                        <Typography
+                            fontSize={18}
+                            sx={{ fontWeight: 600, mt: 2, mb: 1 }}
+                        >
+                            {feature.title}
+                        </Typography>
+                        <Typography
+                            fontSize={14}
+                            sx={{ opacity: 0.8, lineHeight: 1.6 }}
+                        >
+                            {feature.description}
+                        </Typography>
+                    </Box>
+                ))}
+            </Box>
+        </Box>
     );
 };
 

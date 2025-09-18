@@ -1,3 +1,6 @@
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+
 export const styles = {
     container: {
         backgroundColor: '#0a0a0a',
@@ -6,24 +9,26 @@ export const styles = {
         fontFamily: 'Arial, sans-serif'
     },
     header: {
-        // position: 'fixed',
-        // top: 0,
-        // left: 0,
-        // right: 0,
-        // background: 'rgba(0,0,0,0.9)',
-        backdropFilter: 'blur(10px)',
-        padding: '15px 0',
-        zIndex: 1000,
-
-        width: '100%'
+        // backdropFilter: 'blur(10px)',
+        width: '100%',
+        minWidth: '100%',
+        // padding: '0px 100px',
+        padding: {
+            xs: "0px 20px",
+            sm: "0px 40px",
+            md: "0px 80px",
+            lg: "0px 100px",
+        },
+        maxHeight: '104px'
     },
     headerContent: {
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '0 20px',
+        margin: '0',
+        width: '100%',
+        padding: '0px',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        maxHeight: '104px'
     },
     logo: {
         color: '#4A90E2',
@@ -60,7 +65,7 @@ export const styles = {
         display: 'flex',
         alignItems: 'center',
         textAlign: 'center',
-        paddingTop: '80px',
+        paddingTop: '20px',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
@@ -123,12 +128,20 @@ export const styles = {
         textTransform: 'capitalize'
     },
     section: {
-        padding: '80px 0'
+        padding: '80px 0 0',
+        background: '#121212'
     },
     sectionContent: {
-        maxWidth: '1200px',
+        // maxWidth: '1200px',
+        padding: '0px 100px',
+        // padding: {
+        //     xs: "0 20px",
+        //     sm: "0 40px",
+        //     md: "0 80px",
+        //     lg: "0 100px",
+        // },
         margin: '0 auto',
-        padding: '0 20px'
+        // padding: '0 20px'
     },
     sectionTitle: {
         fontSize: 'clamp(2rem, 4vw, 3rem)',
@@ -181,9 +194,7 @@ export const styles = {
         lineHeight: '1.6'
     },
     aboutSection: {
-        background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1000 600\'%3E%3Crect fill=\'%23222\' width=\'1000\' height=\'600\'/%3E%3Cpath d=\'M0 300c50-100 150-200 250-150s200 150 300 100 200-150 300-100 150 100 150 200v50H0z\' fill=\'%23333\'/%3E%3C/svg%3E")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        background: '#121212',
     },
     collaboratorsGrid: {
         display: 'flex',
@@ -197,6 +208,13 @@ export const styles = {
         fontSize: '1.5rem',
         fontWeight: 'bold',
         opacity: '0.7'
+    },
+    collaborationButton: {
+        textTransform: 'none',
+        padding: '10px 16px',
+        border: '1px solid #383C43',
+        color: 'white',
+        marginTop: '24px',
     },
     agendaHeader: {
         display: 'flex',
@@ -269,9 +287,10 @@ export const styles = {
     newsletterForm: {
         display: 'flex',
         gap: '16px',
-        maxWidth: '400px',
+        width: '200px',
+        maxWidth: '100%',
         margin: '0 auto',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
     },
     emailInput: {
         flex: '1',
@@ -297,3 +316,12 @@ export const styles = {
         fontSize: '14px'
     }
 };
+
+export const SectionContent = styled(Box)(({ theme }) => ({
+    margin: '0 auto',
+    maxWidth: '1200px',
+    padding: '0 16px',
+    [theme.breakpoints.up('sm')]: { padding: '0 32px' },
+    [theme.breakpoints.up('md')]: { padding: '0 64px' },
+    [theme.breakpoints.up('lg')]: { padding: '0 100px' },
+}));

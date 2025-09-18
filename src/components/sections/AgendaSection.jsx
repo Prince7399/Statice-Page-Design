@@ -1,4 +1,3 @@
-// components/sections/AgendaSection.js
 import React from 'react';
 import AgendaItem from '../UI/AgendaItem';
 import { styles } from '../../styles/style';
@@ -17,8 +16,8 @@ const AgendaSection = () => {
     ];
     return (
         <>
-            <div style={{ ...styles.section, backgroundColor: '#000' }}>
-                <div style={styles.sectionContent}>
+            <div style={{ ...styles.section, backgroundColor: '#121212', maxWidth: '100%', overflowX: 'hidden' }} sx={{ px: { xs: 0, md: 5 } }}>
+                <div style={styles.sectionContent} sx={{ px: { xs: 0, md: 5 } }}>
                     <div style={styles.agendaHeader}>
                         <h2 style={{ ...styles.sectionTitle, color: 'white' }}>
                             Event <span style={{ ...styles.highlight, color: "#FF6B35" }}>Agenda</span>
