@@ -17,9 +17,9 @@ const CollaboratorsSection = () => {
                         <Button style={styles.collaborationButton}>Become a Member</Button>
                     </Box>
                     <Box display={'flex'} flexDirection={{ sx: 'column', md: 'row' }} flexWrap="wrap" justifyContent="center" alignContent={'center'} gap={4} py={4} px={1} sx={{ backgroundColor: '#121212' }}>
-                        <img src={''} alt="Collaborator 1" style={{ width: '150px', height: '150px', objectFit: 'contain' }} />
-                        <img src={''} alt="Collaborator 2" style={{ width: '150px', height: '150px', objectFit: 'contain' }} />
-                        <img src={''} alt="Collaborator 3" style={{ width: '150px', height: '150px', objectFit: 'contain' }} />
+                        <img src={'/src/assets/AWS_Partner.png'} alt="Collaborator 1" style={{ width: '150px', height: '150px', objectFit: 'contain' }} />
+                        <img src={'/src/assets/SAP.png'} alt="Collaborator 2" style={{ width: '150px', height: '150px', objectFit: 'contain' }} />
+                        <img src={'/src/assets/AWS.png'} alt="Collaborator 3" style={{ width: '150px', height: '150px', objectFit: 'contain' }} />
                     </Box>
                 </Box>
             </Box>
